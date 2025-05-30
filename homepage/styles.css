@@ -1,0 +1,56 @@
+/* Dark Mode */
+body {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center <h1> */
+h1 {
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Add space above the heading */
+}
+
+/* Center <h3> */
+h3 {
+    text-align: center; /* Center the text */
+    margin: 20px auto; /* Add space above and below, and center horizontally */
+    width: 100%; /* Ensure it takes full width */
+    font-size: 1em;
+}
+
+
+/* Style the list of links */
+.links-list {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Center the list items */
+}
+
+.links-list li {
+    margin: 10px 0; /* Add space between list items */
+}
+
+.links-list a {
+    text-decoration: none; /* Remove underline from links */
+    color: #ffffff; /* Light text color */
+    font-size: 1.2em; /* Increase font size */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.links-list a:hover {
+    color: #ffcc00; /* Change color on hover */
+}
+
+/* Bold Current Tab in Nav Bar */
+.navbar .nav-item.active .nav-link {
+    font-weight: bold; /* Bold text for the current tab */
+}
+
+/* Optional: Add hover effect for nav items */
+.navbar .nav-item:hover .nav-link {
+    color: #ffcc00; /* Change color on hover */
+}
