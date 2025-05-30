@@ -1,0 +1,20 @@
+sqlite> SELECT
+   ...>     AVG(energy) AS average_energy,
+   ...>     AVG(valence) AS average_valence,
+   ...>     AVG(danceability) AS average_danceability
+   ...> FROM songs;
++----------------+-----------------+----------------------+
+| average_energy | average_valence | average_danceability |
++----------------+-----------------+----------------------+
+| 0.65906        | 0.484443        | 0.71646              |
++----------------+-----------------+----------------------+
+
+The average treats all songs equally, even though some songs might have been played significantly more often than others.
+A song played 100 times should arguably have a greater impact on the aura than a song played only once.
+
+To create a more representative "Audio Aura", use a weighted average:
+SELECT
+    SUM(energy * play_count) / SUM(play_count) AS weighted_avg_energy,
+    SUM(valence * play_count) / SUM(play_count) AS weighted_avg_valence,
+    SUM(danceability * play_count) / SUM(play_count) AS weighted_avg_danceability
+FROM songs;
