@@ -1,0 +1,46 @@
+sort1 uses: bubble sort
+
+How do you know?: it is the least efficient
+
+sort2 uses: merge sort
+
+How do you know?: it is the most efficient
+
+sort3 uses: selection sort
+
+How do you know?: it is efficient with sorted data but inefficient with unsorted data
+
+
+
+sort 1
+    5000 rand = 0m0.051s
+    100000 rand = 0m0.220s
+    500000 rand = 0m6.522s
+    5000 rev = 0m0.059s
+    100000 rev = 0m0.225s
+    500000 rev = 0m4.856s
+    5000 sorted =
+    10000 sorted =
+    50000 sorted =
+
+sort 2
+    5000 rand = 0m0.019s
+    100000 rand = 0m0.031s
+    500000 rand = 0m0.300s
+    5000 rev = 0m0.015s
+    100000 rev = 0m0.046s
+    500000 rev = 0m0.312s
+    5000 sorted =
+    10000 sorted =
+    50000 sorted =
+
+sort 3
+    5000 rand = 0m0.060s
+    100000 rand = 0m0.129s
+    500000 rand = 0m3.133s
+    5000 rev = 0m0.044s
+    100000 rev = 0m0.180s
+    500000 rev = 0m2.871s
+    5000 sorted =
+    10000 sorted =
+    50000 sorted =
