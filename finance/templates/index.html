@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Add Google Fonts and custom stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="/static/styles.css" rel="stylesheet">
+</head>
+<body>
+
+    {% extends "layout.html" %}
+
+    {% block title %}
+        Home
+    {% endblock %}
+
+    {% block main %}
+        <h1>Home</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Stock</th>
+                    <th>Current Price</th>
+                    <th>Shares Owned</th>
+                    <th>Total Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in portfolio %}
+                    <tr>
+                        <td>{{ stock.symbol }}</td>
+                        <td>{{ stock.name }}</td>
+                        <td>{{ stock.total_shares }}</td>
+                        <td>{{ stock.price | usd }}</td>
+                        <td>{{ stock.total_value | usd }}</td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="4" class="text-end"><strong>Cash</strong></td>
+                    <td>{{ cash | usd }}</td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="text-end"><strong>Grand Total</strong></td>
+                    <td>{{ total_value | usd }}</td>
+                </tr>
+            </tbody>
+        </table>
+    {% endblock %}
+
+</body>
+</html>

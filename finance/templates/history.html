@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Add Google Fonts and custom stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="/static/styles.css" rel="stylesheet">
+</head>
+<body>
+
+    {% extends "layout.html" %}
+
+    {% block title %}
+        Home
+    {% endblock %}
+
+    {% block main %}
+        <h1>Transaction History</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Symbol</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                    <tr>
+                        <td>{{ transaction.type }}</td>
+                        <td>{{ transaction.symbol }}</td>
+                        <td>{{ transaction.shares }}</td>
+                        <td>{{ transaction.price | usd }}</td>
+                        <td>{{ (transaction.shares * transaction.price) | usd}}</td>
+                        <td>{{ transaction.timestamp }}</td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    {% endblock %}
+
+</body>
+</html>
